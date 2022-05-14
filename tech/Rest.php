@@ -48,3 +48,38 @@ function insertEmployee($empData){
 	echo json_encode($empData);	
 }
 ?>
+
+<?php
+function updateEmployee($empData){ 		
+	if($empData["empid"]) {
+      
+        $empName=$empData["empName"];
+        $empCity=$empData["empCity"];
+        $empMobile=$empData["empMobile"];
+        $empEmail=$empData["empEmail"];		
+        $tech_pass=$empData["tech_pass"];
+        $date_tech=$empData["date_tech"];
+		$empQuery="
+			UPDATE ".$this->empTable." 
+			SET  name='".$empName."', city='".$empCity."', mobile='".$empMobile."', email='".$empEmail."', pass='".$tech_pass."', date='".$date_tech."',
+			WHERE id='".$empid."'";
+			echo $empQuery;
+		if( mysqli_query($this->dbConnect, $empQuery)) {
+			$messgae = "Employee updated successfully.";
+			$status = 1;			
+		} else {
+			$messgae = "Employee update failed.";
+			$status = 0;			
+		}
+	} else {
+		$messgae = "Invalid request.";
+		$status = 0;
+	}
+	$empResponse = array(
+		'status' => $status,
+		'status_message' => $messgae
+	);
+	header('Content-Type: application/json');
+	echo json_encode($empResponse);
+}
+?>
