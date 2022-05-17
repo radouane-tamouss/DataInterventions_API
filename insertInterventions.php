@@ -34,3 +34,12 @@ $sql = "INSERT INTO assignwork_tb(request_id,request_info,request_desc, requeste
             '$mobile','$tech_name','$assigne_date')";
 
 
+$result = $conn->query($sql);
+
+$resultJson["result"] ="result";
+
+echo json_encode($resultJson);
+
+?>
+
+
