@@ -11,6 +11,9 @@ if ($conn->connect_error){
    die("Connection failed:" .$conn->connect_error); 
 }
 
+$task = $_GET['task'];
+
+$sql= "INSERT INTO tasks(task) values($task)";
 // $request_info = $_GET('request_info');
 // $request_id = $_GET('request_id');
 // $request_desc = $_GET('request_desc');
@@ -34,7 +37,8 @@ if ($conn->connect_error){
 //             $requester_mobile,$assign_tech,$assign_date) ";
 
 
-// $result = $conn->query($sql);
+$result = $conn->query($sql);
+
 
 $resultJson["result"] ="result";
 
