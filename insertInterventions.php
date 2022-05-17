@@ -13,7 +13,7 @@ if ($conn->connect_error){
 
 $task = $_GET['task'];
 
-$sql= "INSERT INTO tasks(task) values($task)";
+$sql= "INSERT INTO tasks(task) values('$task')";
 // $request_info = $_GET('request_info');
 // $request_id = $_GET('request_id');
 // $request_desc = $_GET('request_desc');
