@@ -11,3 +11,26 @@ if ($conn->connect_error){
    die("Connection failed:" .$conn->connect_error); 
 }
 
+$req_add1 = $_GET('req_add1');
+$request_info = $_GET('request_info');
+$request_id = $_GET('request_id');
+$request_desc = $_GET('request_desc');
+$requester_name = $_GET('requester_name');
+$requester_add1 = $_GET('requester_add1');
+$requester_add2 = $_GET('requester_add2');
+$requester_city = $_GET('requester_city');
+$requester_state = $_GET('requester_state');
+$requester_zip = $_GET('requester_zip');
+$requester_email = $_GET('requester_email');
+$requester_mobile = $_GET('requester_mobile');
+$assign_tech = $_GET('assign_tech');
+$assign_date = $_GET('assign_date');
+$sql = "INSERT INTO assignwork_tb(request_id,request_info,request_desc, requester_name , 
+         requester_add1 , requester_add2 , requester_city , requester_state, requester_zip,
+          requester_email, requester_mobile,assign_tech,assign_date) VALUES($req_id,'$request_info',
+          '$req_desc ',
+           '$requster_name', '$req_add1', '$req_add2',
+            '$req_city', '$req_prov', '$zip', '$req_email',
+            '$mobile','$tech_name','$assigne_date')";
+
+
