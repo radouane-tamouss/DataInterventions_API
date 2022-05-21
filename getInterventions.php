@@ -1,13 +1,25 @@
 <?php
+
 $servername="localhost";
 $username ="root";
 $password="";
 $dbname="api";
+
+
 // Create connection
 $conn=new mysqli($servername, $username, $password, $dbname);
+
+
 // Check connection
 if ($conn->connect_error){
    die("Connection failed:" .$conn->connect_error); 
+}
+
+if($_SERVER['PHP_AUTH_USER'] !== 'admin' && $_SERVER['PHP_AUTH_PW'] !== 'admin'){
+    header("WWW-Authenticate: Basic relm=\"thetlage\"");
+    header("HTTP\ 1.0 401 Unauthorized");
+    echo 'There was an error';
+    exit;
 }
 
 $assign_tech = $_GET['assign_tech'];
