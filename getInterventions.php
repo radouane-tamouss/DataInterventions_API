@@ -14,7 +14,7 @@ $assign_tech = $_GET['assign_tech'];
 
 
 
-$sql= "SELECT request_id,requester_name from assignwork_tb WHERE assign_tech= '$assign_tech'"; 
+$sql= "SELECT request_id,requester_name,request_info,request_desc,assign_date,requester_add1,requester_add2,requester_state,requester_zip,requester_email,requester_mobile from assignwork_tb WHERE assign_tech= '$assign_tech'"; 
 
 $result = $conn->query($sql);
 
