@@ -2,15 +2,19 @@
 $servername="localhost";
 $username ="root";
 $password="";
-$dbname="api";
+$dbname="inter";
 // Create connection
 $conn=new mysqli($servername, $username, $password, $dbname);
 // Check connection
 if ($conn->connect_error){
    die("Connection failed:" .$conn->connect_error); 
 }
-$tech_name = 'Tech1';
-$sql= "SELECT * from assignwork_tb WHERE assign_tech= '$tech_name'"; 
+
+$assign_tech = $_GET['assign_tech'];
+
+
+
+$sql= "SELECT request_id,requester_name from assignwork_tb WHERE assign_tech= '$assign_tech'"; 
 
 $result = $conn->query($sql);
 
