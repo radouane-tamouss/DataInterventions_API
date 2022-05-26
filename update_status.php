@@ -3,8 +3,8 @@
 header("Content-Type: application/json; charset=UTF-8");
 
 require_once 'connect.php';
-
-
+$key = $_POST['key'];
+if ( $key == "update" ){
 
     $request_id    = $_GET['request_id'];
     $done  = $_GET['done'];
@@ -26,6 +26,6 @@ require_once 'connect.php';
 
             mysqli_close($conn);
         }
-
+    }
 
 ?>
