@@ -5,7 +5,7 @@ require_once 'connect.php';
 
 $key = $_POST['key'];
 
-if ( $key == "update" ){
+if ( $key == "insert" ){
 
 $request_id = $_POST['request_id'];
 $request_info = $_POST['request_info'];
