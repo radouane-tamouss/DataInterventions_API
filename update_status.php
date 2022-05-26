@@ -6,8 +6,8 @@ require_once 'connect.php';
 $key = $_POST['key'];
 if ( $key == "update" ){
 
-    $request_id    = $_GET['request_id'];
-    $done  = $_GET['done'];
+    $request_id    = $_POST['request_id'];
+    $done  = $_POST['done'];
 
     $query = "UPDATE assignwork_tb SET done='$done' WHERE request_id='$request_id' ";
 
