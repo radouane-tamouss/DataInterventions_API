@@ -27,6 +27,7 @@ while( $row = mysqli_fetch_assoc($result) ){
         'assign_date' => $row['assign_date']
     ) 
     );
+    
 }
 
 echo json_encode($response);
